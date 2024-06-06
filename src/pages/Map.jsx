@@ -11,7 +11,7 @@ export default function Map(){
 
     const [ localizacao, definirLocalizacao ] = useState({})
     const icon = useRef(false)
-    
+
     useEffect(function() {
         async function ObterLocalizacao() {
           await Location.requestForegroundPermissionsAsync()
@@ -48,8 +48,7 @@ export default function Map(){
                             }}
                             title="Aqui"
                             description="aqui">
-                                <Pressable
-                                    onPressIn={icon = true}>
+                                <Pressable>
                                     <Ionicons name="business" size={32} color={"black"} />
                                 </Pressable>
                             </Marker>
