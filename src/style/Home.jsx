@@ -2,11 +2,11 @@ import { StyleSheet } from "react-native";
 
 const estiloHome = StyleSheet.create({
     container:{
-        flex: 1,
-        alignItems: "center",
+        //flex: 1,
+        //alignItems: "center",
         backgroundColor: "#24292e",
-        // justifyContent: "center",
-        margin: 0,
+       // justifyContent: "center",
+       // margin: 0,
     },
     body: {
         backgroundColor: "32f363d",

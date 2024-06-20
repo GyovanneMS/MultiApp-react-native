@@ -1,8 +1,27 @@
 import { View, StyleSheet, Text, Image, Linking, ScrollView } from "react-native";
 import React, {useEffect, useState} from "react";
 import estiloHome from "../style/Home";
+import citacoesMotivacionais from '../data/APIMotivacional.js';
+import axios from "axios";
 
 export default function Home(){
+
+    const [fraseMotivacional, definirFraseMotivacional] = useState("");
+    const [fraseAuthor, definirFraseAuthor] = useState("");
+
+    useEffect(function() {
+        axios.get('https://zenquotes.io/api/random')
+        .then(response => {
+          const data = response.data;
+          console.log(`Quote: ${data[0].q}\nAuthor: ${data[0].a}`);
+          definirFraseAuthor(data[0].a);
+          definirFraseMotivacional(data[0].q);
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+      }, [])
+
     function handleEmailPress(){
         Linking.openURL('mailto:gyovannecontato@gmail.com');
     }
@@ -18,7 +37,7 @@ export default function Home(){
     function handleLinkedinPress(){
         Linking.openURL('https://www.linkedin.com/in/gyovanne-martins-612923240/');
     }
-    return <ScrollView style={estiloHome.container}>
+    return <ScrollView contentContainerStyle={estiloHome.container}>
         <View style={estiloHome.body}>
             <Image 
                 source={require('../assets/chileAnagonye.jpg')}
@@ -71,5 +90,7 @@ export default function Home(){
                 <Text style={[estiloHome.textColor, estiloHome.textSize]} onPress={handleLinkedinPress}>Linkedin</Text>
             </View>
         </View>
+        <Text>{fraseMotivacional}</Text>
+        <Text>{fraseAuthor}</Text>
     </ScrollView>
 }
