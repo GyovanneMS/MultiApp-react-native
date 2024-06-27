@@ -5,16 +5,19 @@ const estiloExperience = StyleSheet.create({
         backgroundColor: "#fff"
     },
     topo: {
-        alignItems: "center",
+        height: '30%',
         backgroundColor: "#f54748",
     },
-    topoImagem: {
-        height: "50%" 
-    }, 
+    // topoImagem: {
+    //     height: "50%" 
+    // }, 
     topoTexto: {
         color: "#fff",
-        fontSize: 32,
-        textAlign: "center"   
+        fontSize: 40,
+        textAlign: "center",
+        justifyContent: "center",
+        backgroundColor: "yellow",
+        paddingTop: 90,
     },
     receita: {
         marginVertical: 16,

@@ -3,6 +3,7 @@ import React, {useEffect, useState} from "react";
 import estiloHome from "../style/Home";
 import citacoesMotivacionais from '../data/APIMotivacional.js';
 import axios from "axios";
+import {FontAwesome6} from "@expo/vector-icons";
 
 export default function Home(){
 
@@ -16,11 +17,12 @@ export default function Home(){
           console.log(`Quote: ${data[0].q}\nAuthor: ${data[0].a}`);
           definirFraseAuthor(data[0].a);
           definirFraseMotivacional(data[0].q);
+          console.log(fraseMotivacional);
         })
         .catch(error => {
           console.error('Error:', error);
         });
-      }, [])
+    }, [])
 
     function handleEmailPress(){
         Linking.openURL('mailto:gyovannecontato@gmail.com');
@@ -84,10 +86,10 @@ export default function Home(){
                 </Text>
             </View>
             <View style={estiloHome.textFieldBottom}>
-                <Text style={[estiloHome.textColor, estiloHome.textSize]} onPress={handleEmailPress}>Email</Text>
-                <Text style={[estiloHome.textColor, estiloHome.textSize]} onPress={handlePhonePress}>Telefone</Text>
-                <Text style={[estiloHome.textColor, estiloHome.textSize]} onPress={handleGithubPress}>Github</Text>
-                <Text style={[estiloHome.textColor, estiloHome.textSize]} onPress={handleLinkedinPress}>Linkedin</Text>
+                <Text style={[estiloHome.textColor, estiloHome.textSize, estiloHome.item]} onPress={handleEmailPress}><FontAwesome6 name="at" size={32} color={"black"}/> Email</Text>
+                <Text style={[estiloHome.textColor, estiloHome.textSize, estiloHome.item]} onPress={handlePhonePress}><FontAwesome6 name="phone" size={32} color={"black"}/>{`\n`}Celular</Text>
+                <Text style={[estiloHome.textColor, estiloHome.textSize, estiloHome.item]} onPress={handleGithubPress}> <FontAwesome6 name="github" size={32} color={"black"}/> Github</Text>
+                <Text style={[estiloHome.textColor, estiloHome.textSize, estiloHome.item]} onPress={handleLinkedinPress}><FontAwesome6 name="linkedin" size={32} color={"black"}/> Linkedin</Text>
             </View>
         </View>
         <Text>{fraseMotivacional}</Text>
