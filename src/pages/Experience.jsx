@@ -6,9 +6,6 @@ export default function Experience(){
     return <ScrollView>
     <StatusBar backgroundColor="#f54748" barStyle="light-content"/>
         <View style={ estiloExperience.topo }>
-            <Image 
-              style={ estiloExperience.topoImagem }
-              source={ require("../assets/a vida é um jogo.jpg") }/>
             <Text style={ estiloExperience.topoTexto }> 
                 Minhas experiências 
             </Text>

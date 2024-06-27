@@ -1,44 +1,77 @@
 import { StyleSheet } from "react-native";
 
 const estiloHome = StyleSheet.create({
-    container:{
-        //flex: 1,
-        //alignItems: "center",
-        backgroundColor: "#24292e",
-       // justifyContent: "center",
-       // margin: 0,
+    container: {
+        flexGrow: 1,
+        alignItems: 'center',
+        justifyContent: 'center',
+        backgroundColor: '#24292e',
+        //padding: 5,
     },
     body: {
-        backgroundColor: "32f363d",
-        letterSpacing: "1px",
-        width: 300,
+        backgroundColor: '#24292e',
+        letterSpacing: 1,
+        width: 400,
         padding: 12,
+        alignItems: 'center',
     },
     imageProfile: {
-        width: '100%',
+        width: '80%',
         height: 300,
-        borderRadius: 9000,
-    }, 
+        borderRadius: 150,
+        marginBottom: 20,
+        marginTop: 30
+      },
     textColor: {
         color: "#fff",
     },
-    textFieldTop: {
-        flexDirection: "row",
+        textFieldTop: {
+        flexDirection: 'row',
         gap: 10,
+        justifyContent: 'center',
+        backgroundColor: '#808080',
+        borderRadius: 45,
+        padding: 10,
         marginBottom: 10,
-        justifyContent: "center"
+        textAlign: 'center',
+        width: '100%'
     },
-    textFieldMid: {
-        marginBottom: 10
+        textFieldMid: {
+        marginBottom: 10,
+        backgroundColor: '#808080',
+        borderRadius: 40,
+        padding: 10,
+        marginBottom: 10,
+        textAlign: 'center',
+        width: '100%'
     },
     textFieldBottom: {
-        justifyContent: "space-between",
-        flexDirection: "row",
+        justifyContent: 'space-between',
+        flexDirection: 'row',
+        backgroundColor: '#808080',
+        borderRadius: 45,
+        padding: 10,
+        marginBottom: 10,
+        textAlign: 'center',
+        width: '100%',
+        height: 120
     },
+
     textSize: {
-        fontSize: 20,
-        color: "yellow",
-    }
+        flex: 1,
+        justifyContent: 'center',
+        flexWrap: "wrap",
+        alignContent: 'center',
+        alignItems: 'center',
+    },
+    item: {
+        flex: 1,
+        flexGrow: 1,
+        flexDirection: 'column',
+        alignItems: 'center',
+        marginVertical: 10,
+        justifyContent: 'center'
+    },
 });
 
 export default estiloHome;
