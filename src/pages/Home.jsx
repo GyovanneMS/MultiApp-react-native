@@ -14,10 +14,8 @@ export default function Home(){
         axios.get('https://zenquotes.io/api/random')
         .then(response => {
           const data = response.data;
-          console.log(`Quote: ${data[0].q}\nAuthor: ${data[0].a}`);
           definirFraseAuthor(data[0].a);
           definirFraseMotivacional(data[0].q);
-          console.log(fraseMotivacional);
         })
         .catch(error => {
           console.error('Error:', error);
@@ -63,14 +61,6 @@ export default function Home(){
                     Adoro programar em SQL, fazer modelagem DER e MER e tudo com que tem haver com banco de dados.
                 </Text>
             </View>
-            <View style={estiloHome.textFieldMid}>
-                <Text style={[estiloHome.textColor, {fontWeight: 600}]}>
-                    Competências:
-                </Text>
-                <Text style={[estiloHome.textColor, {textAlign: "justify"}]}>
-                    Lógica de programação, Raciocínio computacional, Python, HTML, CSS, JavaScript, React, React Native, SQL, Mainframe, COBOL e PHP.
-                </Text>
-            </View>
 
             <View style={estiloHome.textFieldMid}>
                 <Text style={[estiloHome.textColor, {fontWeight: 600}]}>
@@ -92,7 +82,5 @@ export default function Home(){
                 <Text style={[estiloHome.textColor, estiloHome.textSize, estiloHome.item]} onPress={handleLinkedinPress}><FontAwesome6 name="linkedin" size={32} color={"black"}/> Linkedin</Text>
             </View>
         </View>
-        <Text>{fraseMotivacional}</Text>
-        <Text>{fraseAuthor}</Text>
     </ScrollView>
 }

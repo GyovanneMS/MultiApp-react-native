@@ -1,30 +1,42 @@
 import { ScrollView, StatusBar, View, Text, Image, StyleSheet } from "react-native";
-import React, {useEffect, useState} from "react";
-import estiloExperience from"../style/Experience.jsx";
+import React from "react";
+import estiloExperience from "../style/Experience.jsx";
+import experiencias from "../data/Experiencia.js";
 
-export default function Experience(){
-    return <ScrollView>
-    <StatusBar backgroundColor="#f54748" barStyle="light-content"/>
-        <View style={ estiloExperience.topo }>
-            <Text style={ estiloExperience.topoTexto }> 
-                Minhas experiências 
-            </Text>
-        </View>
-        <View style={ estiloExperience.receita }>
-            <Text style={ estiloExperience.receitaTitulo }> NOME DA RECEITA </Text>
-            <Image
-                style={ estiloExperience.receitaImagem }
-                source={ require("../assets/splash.png") }/>
+export default function Experience() {
+    return (
+        <ScrollView>
+            <StatusBar backgroundColor="#f54748" barStyle="light-content" />
+            <View style={estiloExperience.topo}>
+                <Text style={estiloExperience.topoTexto}>
+                    Minhas experiências
+                </Text>
             </View>
-            <Text style={ estiloExperience.receitaSubtitulo }> INGREDIENTES </Text>
-            <Text>
-            1 Colher de açúcar { "/n" }
-            1 Xícara de trigo
-            </Text>
-            <Text style={ estiloExperience.receitaSubtitulo }> MODO DE PREPARO </Text>
-            <Text>
-            Em um liquidificador... { "/n" }
-            Acrescente o fermento...
-            </Text>
-  </ScrollView>
+            {
+                experiencias.map((experiencia) => (
+                    <View key={experiencia.id}>
+                        <View style={estiloExperience.receita}>
+                            <Text style={estiloExperience.receitaTitulo}>{experiencia.NomeExperiencia}</Text>
+                            <Text style={estiloExperience.receitaSubtitulo}>{experiencia.Subtitulo}</Text>
+                            <Image
+                                style={estiloExperience.receitaImagem}
+                                source={experiencia.Imagem}
+                            />
+                        </View>
+                        <Text> 
+                            {experiencia.Skills.map((Skill, index) => (
+                                <Text key={index} style={estiloExperience.experiencia}>
+                                    {Skill}
+                                    {index < experiencia.Skills.length - 1 ? ', ' : ''}
+                                </Text>
+                            ))}
+                        </Text>
+                        <Text>
+                            {experiencia.Experiencia}
+                        </Text>
+                    </View>
+                ))
+            }
+        </ScrollView>
+    );
 }

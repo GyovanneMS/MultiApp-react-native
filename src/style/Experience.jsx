@@ -2,22 +2,19 @@ import { StyleSheet } from "react-native"
 
 const estiloExperience = StyleSheet.create({
     tela: {
-        backgroundColor: "#fff"
+        backgroundColor: "#fff",
+        marginBottom: "30"
     },
     topo: {
-        height: '30%',
+        height: '5%',
         backgroundColor: "#f54748",
     },
-    // topoImagem: {
-    //     height: "50%" 
-    // }, 
     topoTexto: {
         color: "#fff",
-        fontSize: 40,
+        fontSize: 30,
         textAlign: "center",
         justifyContent: "center",
-        backgroundColor: "yellow",
-        paddingTop: 90,
+        paddingTop: 50,
     },
     receita: {
         marginVertical: 16,
@@ -30,12 +27,15 @@ const estiloExperience = StyleSheet.create({
     receitaTitulo: {
         fontSize: 32,
         fontWeight: "bold",
-        marginVertical: 16,
+        marginVertical: 16, 
         textAlign: "center" 
     },
     receitaSubtitulo: {
-        fontSize: 24,
+        fontSize: 20,
         marginVertical: 16,
+    }, 
+    experiencia: {
+        fontWeight: "bold",
     }
 
 });
