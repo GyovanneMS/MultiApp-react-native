@@ -1,18 +1,19 @@
 import axios from 'axios';
 
-// Definindo a função que busca as citações motivacionais
-const citacoesMotivacionais = () => {
-   axios.get('https://zenquotes.io/api/random')
-    .then(response => {
-      const data = response.data;
-      console.log(`Quote: ${data[0].q}\nAuthor: ${data[0].a}`);
-      const dados = [data[0].q, data[0].a]
-      console.log(dados);
-      return dados;
-    })
-    .catch(error => {
-      console.error('Error:', error);
-    });
+// Função assíncrona que busca e retorna uma citação motivacional
+const citacoesMotivacionais = async () => {
+    try {
+        const response = await axios.get('https://zenquotes.io/api/random');
+        const data = response.data;
+        const citação = {
+            quote: data[0].q,
+            author: data[0].a
+        };
+        return citação; // Retorna um objeto com a citação e o autor
+    } catch (error) {
+        console.error('Error:', error);
+        throw error; // Lança o erro para tratamento externo
+    }
 };
 
 export default citacoesMotivacionais;

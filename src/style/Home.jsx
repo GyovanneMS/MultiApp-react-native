@@ -6,71 +6,62 @@ const estiloHome = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: '#24292e',
-        //padding: 5,
+        padding: 5, // Espaçamento interno de 5 unidades
     },
     body: {
         backgroundColor: '#24292e',
-        letterSpacing: 1,
-        width: 400,
-        padding: 12,
-        alignItems: 'center',
+        letterSpacing: 1, // Espaçamento entre caracteres de 1 unidade
+        width: 400, // Largura fixa de 400 unidades
+        padding: 12, // Espaçamento interno de 12 unidades
+        alignItems: 'center', // Alinha os itens no centro horizontalmente
     },
     imageProfile: {
-        width: '80%',
-        height: 300,
-        borderRadius: 150,
-        marginBottom: 20,
-        marginTop: 30
-      },
+        width: '80%', // Largura de 80% do contêiner pai
+        height: 300, // Altura fixa de 300 unidades
+        borderRadius: 150, // Borda arredondada com raio de 150 unidades (para criar um círculo com 300x300)
+        marginBottom: 20, // Margem inferior de 20 unidades
+        marginTop: 30, // Margem superior de 30 unidades
+    },
     textColor: {
-        color: "#fff",
+        color: "#fff", // Cor do texto branca
     },
-        textFieldTop: {
-        flexDirection: 'row',
-        gap: 10,
-        justifyContent: 'center',
-        backgroundColor: '#808080',
-        borderRadius: 45,
-        padding: 10,
-        marginBottom: 10,
-        textAlign: 'center',
-        width: '100%'
+    textField: {
+        backgroundColor: '#808080', // Cor de fundo cinza
+        borderRadius: 45, // Borda arredondada com raio de 45 unidades
+        padding: 10, // Espaçamento interno de 10 unidades
+        marginBottom: 10, // Margem inferior de 10 unidades
+        textAlign: 'center', // Alinhamento central do texto
+        width: '100%', // Largura de 100% do contêiner pai
     },
-        textFieldMid: {
-        marginBottom: 10,
-        backgroundColor: '#808080',
-        borderRadius: 40,
-        padding: 10,
-        marginBottom: 10,
-        textAlign: 'center',
-        width: '100%'
+    textFieldTop: {
+        ...this.textField, // Herda estilos de textField
+        flexDirection: 'row', // Itens alinhados em linha
+        justifyContent: 'center', // Alinhamento central dos itens na linha
+        gap: 10, // Espaço entre os itens de 10 unidades
+    },
+    textFieldMid: {
+        ...this.textField, // Herda estilos de textField
+        marginBottom: 10, // Margem inferior de 10 unidades
     },
     textFieldBottom: {
-        justifyContent: 'space-between',
-        flexDirection: 'row',
-        backgroundColor: '#808080',
-        borderRadius: 45,
-        padding: 10,
-        marginBottom: 10,
-        textAlign: 'center',
-        width: '100%',
-        height: 120
+        ...this.textField, // Herda estilos de textField
+        flexDirection: 'row', // Itens alinhados em linha
+        justifyContent: 'space-between', // Espaço entre os itens
+        height: 120, // Altura fixa de 120 unidades
     },
-
     textSize: {
-        flex: 1,
-        justifyContent: 'center',
-        flexWrap: "wrap",
-        alignContent: 'center',
-        alignItems: 'center',
+        flex: 1, // Cresce para ocupar o espaço disponível
+        justifyContent: 'center', // Alinha no centro verticalmente
+        flexWrap: "wrap", // Quebra de linha automática
+        alignContent: 'center', // Alinha no centro horizontalmente
+        alignItems: 'center', // Alinha no centro verticalmente
     },
     item: {
-        flex: 1,
-        flexGrow: 1,
-        flexDirection: 'column',
-        alignItems: 'center',
-        marginVertical: 10,
-        justifyContent: 'center'
+        flex: 1, // Cresce para ocupar o espaço disponível
+        flexDirection: 'column', // Itens alinhados em coluna
+        alignItems: 'center', // Alinha no centro horizontalmente
+        marginVertical: 10, // Margem vertical de 10 unidades
+        justifyContent: 'center', // Alinha no centro verticalmente
     },
 });
 

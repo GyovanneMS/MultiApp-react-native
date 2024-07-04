@@ -2,33 +2,33 @@ const Skills = [
     {
         Nome: "Python",
         Level: "Básico",
-        Tipo : "Linguagem"
+        Tipo: "Linguagem"
     },
     {
         Nome: "PowerPoint",
         Level: "Avançado",
-        Tipo : "Tecnologia"
+        Tipo: "Tecnologia"
     },
     {
         Nome: "Inglês",
         Level: "Intermediário",
-        Tipo : "Outro"
+        Tipo: "Outro"
     },
     {
         Nome: "SQL",
         Level: "Intermediário",
-        Tipo : "Linguagem"
+        Tipo: "Linguagem"
     },
     {
         Nome: "Excel",
         Level: "Básico",
-        Tipo : "Tecnologia"
+        Tipo: "Tecnologia"
     },
     {
         Nome: "Java",
         Level: "Intermediário",
-        Tipo : "Linguagem"
+        Tipo: "Linguagem"
     },
-]
+];
 
 export default Skills;
